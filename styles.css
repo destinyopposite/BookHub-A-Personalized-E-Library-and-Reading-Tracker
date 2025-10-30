@@ -1,0 +1,257 @@
+/* --- Global Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #38a169; /* Green - for BookHub identity */
+    --secondary: #2c5282; /* Dark Blue */
+    --background: #f7f7f7;
+    --card-bg: #ffffff;
+    --text-color: #2d3748;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--secondary);
+    color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Forms (Auth & Book) --- */
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 450px;
+    margin: 40px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #2f855a;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e0;
+}
+
+.btn-danger {
+    background-color: #e53e3e;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #c53030;
+}
+
+/* --- Messages --- */
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: #c6f6d5;
+    color: #276749;
+    border: 1px solid #68d391;
+}
+
+.message.error {
+    background-color: #fed7d7;
+    color: #9b2c2c;
+    border: 1px solid #f68787;
+}
+
+/* --- Dashboard & Book List --- */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.book-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    border-left: 5px solid var(--primary);
+}
+
+.book-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: var(--secondary);
+}
+
+.book-card p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.book-card .status {
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.85rem;
+}
+
+.status-To-Read { background-color: #fbd38d; color: #825000; }
+.status-Reading { background-color: #9f7aea; color: #44337a; }
+.status-Completed { background-color: #68d391; color: #276749; }
+
+.progress-bar {
+    background-color: var(--border-color);
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary);
+    transition: width 0.5s;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* --- Responsive adjustments for smaller screens --- */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    .nav-links a {
+        display: block;
+        margin: 5px 0;
+    }
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .dashboard-header h2 {
+        margin-bottom: 10px;
+    }
+}
